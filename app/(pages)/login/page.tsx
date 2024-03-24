@@ -3,7 +3,7 @@
 import { signIn } from "next-auth/react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { ChangeEvent, FormEvent, useEffect, useState } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { IoMdEye, IoMdEyeOff } from "react-icons/io";
 
@@ -28,9 +28,13 @@ export default function Login() {
       console.log("login-log", result);
       toast.success("User Loggedin");
       router.refresh();
-      setTimeout(() => {
-        router.push("/dashboard");
-      }, 3000);
+      new Promise<void>((resolve) => {
+        setTimeout(() => {
+          router.push("/dashboard");
+        }, 3000);
+        resolve();
+      });
+      return result;
     } catch (e) {
       console.log(e instanceof Error && e?.message);
       return toast.error(
