@@ -8,6 +8,9 @@ export default function Home() {
         <p role="button" className="px-4 hover:shadow-slate-500 shadow-lg py-2 bg-slate-950 hover:bg-salte-900 rounded-md">
           <Link href="/dashboard">Go to DashBoard</Link>
         </p>
+        <p role="button" className="px-4 mx-4 hover:shadow-slate-500 shadow-lg py-2 bg-slate-950 hover:bg-salte-900 rounded-md">
+          <Link href="/user">Go to Users</Link>
+        </p>
       </div>
     </main>
   );
