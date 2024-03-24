@@ -42,7 +42,7 @@ export default function SignUp() {
           </button>
           <div className="flex items-center gap-2 flex-wrap mt-3">
             <p>Already a User ? </p>
-            <Link href="/login" className="hover:underline underline-offset-4">
+            <Link href="/api/auth/signin" className="hover:underline underline-offset-4">
               Login
             </Link>
           </div>
